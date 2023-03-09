@@ -1,0 +1,278 @@
+:root {
+    --blanco:#ffffff;
+    --oscuro:#212121;
+    --primario:#7e01c2;
+    --secundario:#20d2db;
+    --amarillo:#ffc107;
+    --rojo:#db375a;
+    --gris: #757575;
+    --rosa: #d43284;
+    --grisclaro: #dfe9f3;
+    --grisraro: #82868f;
+    --cafe: #ab7f39;
+}
+/* Globales */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+/* Scroll Snap */
+.servicios,
+.navegacion-principal,
+.formularios {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-size: 16px; /* 1rem = 10px */
+    font-family: 'Orbitron', sans-serif;
+    background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 100% );
+}
+
+.boton {
+    background-color: var(--cafe);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}    
+
+.boton:hover {
+    background-color: var(--secundario);
+    color:var(--oscuro);
+    cursor: pointer;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto 0 auto;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(117,106,117,0.53);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(117,106,117,0.53);
+    box-shadow: 0px 5px 15px 0px rgba(117,106,117,0.53);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+/* Tipografia */
+h1 {
+    color: var(--oscuro);
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
+}
+
+/* Titulos */
+.titulo span {
+    font-size: 2rem;
+    color: var(--oscuro);
+}
+
+/* Utilidades */
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+
+}
+
+.flex {
+    display: flex;
+}
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+/* Navegacion */
+.nav-bg {
+    background-color: var(--grisraro);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--cafe);
+    color: var(--oscuro);
+}
+
+@media (min-width: 0) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+}
+
+/* Hero */
+.hero {
+    background-image: url(../Images/desk2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0,0,0,.7);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+
+.contenido-hero .ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* Servicios */
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio p {
+    line-height: 2;
+}
+
+.servicio h3 {
+    color: var(--oscuro);
+    font-weight: normal;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--grisraro);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Contacto */
+.formularios {
+    background-color: var(--oscuro);
+    width: min( 60rem, 100%); /* Utilizar el valor mas pequeño */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formularios fieldset {
+    border: none;
+}
+
+.formularios legend {
+    color: var(--cafe);
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+}
+
+.campo:nth-child(3),
+.campo:nth-child(4) {
+    grid-column: 1 / 3;
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo textarea {
+    height: 15rem;
+    width: 100%;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+    
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;    
+}
